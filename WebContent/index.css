@@ -18,6 +18,7 @@
 	padding-top:0.1em;
 }
 #warn{
+	margin-top:0.4em;
 	padding-top:0em;
 	text-align:center;
 	color:black;
@@ -29,3 +30,22 @@
 #footerindex{
 	margin-top:1em;
 }
+
+
+body {
+
+  /* SCALABLE BACKGROUND TO FILL AVAILABLE VIEWPORT */
+
+  background-color: #fcfcfc;
+
+  background: url(./images/one1.jpg) center center fixed;
+
+  -webkit-background-size: cover;
+
+  -moz-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-size: cover;
+
+} 
