@@ -11,3 +11,20 @@
 	width:550px;
 	max-width:100%;
 }
+#submitbutton{ 
+	margin-left:5em;
+	margin-bottom:0.5em;
+	padding: 0.5em 1em;
+	width:400px;
+	max-width:80%; 
+	}
+#wholefooter{
+	margin-top:1em;
+}
+#footerhead{
+	padding:0.5em;
+}
+#totalfooter{
+	height:40px;
+	max-height:auto;
+}

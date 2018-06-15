@@ -30,6 +30,11 @@
 	max-width:80%;
 	
 }
+#submitbutton{
+	margin-bottom:1em;
+	width:200px;
+	max-width:80%;
+}
 #footerindex{
 	margin-top:1em;
 }
