@@ -28,7 +28,6 @@ public class NewUserReg extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Made it to the servlet");
-		PrintWriter out = response.getWriter();
 		String username = request.getParameter("userName");
 		String password = request.getParameter("passWord");
 		String repassword = request.getParameter("rePassWord");
@@ -46,18 +45,36 @@ public class NewUserReg extends HttpServlet {
 						System.out.println("After equals");
 						if (NewUserRegDao.registration(username.trim(), password.trim())) {
 							System.out.println("After the static method");
-							session.setAttribute("userStatus", "true");
-							response.sendRedirect("home.jsp");
+							request.setAttribute("userStatus", "true");
+							request.getRequestDispatcher("home.jsp").forward(request, response);
 
 						} else {
 							// Error while inserting data
+							System.out.println("This is good in this case");
+							request.setAttribute("usernameExist", "true");
+							request.getRequestDispatcher("home.jsp").forward(request, response);
 						}
 
+					}else {
+						//For the password that do not match
+						request.setAttribute("unequalPassword", "true");
+						request.getRequestDispatcher("home.jsp").forward(request, response);
 					}
+				}else {
+					request.setAttribute("rePassword", "true");
+					request.getRequestDispatcher("home.jsp").forward(request, response);
 				}
+			}else {
+				// For the password empty
+				request.setAttribute("passwordEmpty", "true");
+				request.getRequestDispatcher("home.jsp").forward(request, response);
+				
 			}
 
 		} else {
+			//For the username empty
+			request.setAttribute("usernameEmpty", "true");
+			request.getRequestDispatcher("home.jsp").forward(request, response);
 			System.out.println("else of the first if");
 			// When all the above conditions are not met i.e they are empty null etc
 		}

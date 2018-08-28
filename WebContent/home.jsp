@@ -51,11 +51,13 @@
       </div>
       
       <div class= "container">
+      
+      <!-- Left side of the page -->
       	<div class= "row" id="row2">
       		<div class = "col-lg-6">
       		</div>
       		
-      		
+      <!-- Right side of the page -->	
       		<div class = "col-lg-6"> 
 	      			 <form action="./newuser" method="post">
 	      			 
@@ -78,17 +80,54 @@
 					  				 
 					 </form>			
       		</div>
+      		
  		<!-- This is the pop up alert when user is successfully added -->
 		<c:if test="${userStatus.equals('true')}">
 		  <script type="text/javascript">			
 			alert("User added successfully");
-		</script>  
-		<% session.setAttribute("userStatus", "false"); %>  
+		</script>   
+		</c:if> 
+		
+		<!-- In the case of the username field is empty -->
+		<c:if test="${usernameEmpty.equals('true')}">
+		  <script type="text/javascript">			
+			alert("Username cannot be empty");
+		</script>
+		</c:if> 
+		
+		<!-- In the case of the password field is empty -->
+		<c:if test="${passwordEmpty.equals('true')}">
+		  <script type="text/javascript">			
+			alert("Password cannot be empty");
+		</script>
+		</c:if> 
+		
+		<!-- In the case of the Re-password field do not match -->
+		<c:if test="${rePassword.equals('true')}">
+		  <script type="text/javascript">			
+			alert("Re-Password cannot be empty");
+		</script>
+		</c:if> 
+		
+		<!-- In the case of the password field do not match -->
+		<c:if test="${unequalPassword.equals('true')}">
+		  <script type="text/javascript">			
+			alert("Password and Re-Password does not match");
+		</script>
+		</c:if> 
+		
+		<!-- In the case of the username already exist-->
+		<c:if test="${usernameExist.equals('true')}">
+		  <script type="text/javascript">
+			alert("Username Already Exist");
+		</script>
 		</c:if> 
 		
 		
       	</div>
-      </div>     
+      </div>
+      
+      <!-- Footer -->     
       <div class = "container">
 		  <div class ="row">
 			  <div class ="col-lg-12" >
