@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Home</title>
-    <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" href="./style/home.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -35,7 +41,7 @@
       		<div class="bg-dark text-white">
       		<nav class="nav nav-pills flex-column flex-sm-row">
 			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="#">Home</a> 
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Alumni</a> 
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Guest Faculty E-Bill</a>
@@ -51,27 +57,36 @@
       		
       		
       		<div class = "col-lg-6"> 
-	      			 <form>
+	      			 <form action="./newuser" method="post">
 	      			 
 					  <div class="form-group " >
 					  <button type="button" id="newuser" class="btn btn-secondary btn-lg btn-block " > <b>Add New User</b>
 					  </button>
-					  <br><label for="exampleInputEmail1">UserName</label>
-					    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+					  <br><label for="exampleInputEmail1"> Enter Username</label>
+					    <input type="text" name="userName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter new username"/>
 					  </div>
 					  <div class="form-group ">
 					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+					    <input type="password" name="passWord" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
 					  </div>
 					  <div class="form-group ">
-					    <label for="exampleInputPassword1">ReEnter-Password</label>
-					    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"/>
+					    <label for="exampleInputPassword1">Password</label> <%--Below variable name caution--%>
+					    <input type="password" name="rePassWord" class="form-control" id="exampleInputPassword2" placeholder="Password"/>
 					  </div>
 					  
 					  <button type="submit" class="btn btn-primary btn-block" id="submitbutton"> Submit </button>
 					  				 
 					 </form>			
       		</div>
+ 		<!-- This is the pop up alert when user is successfully added -->
+		<c:if test="${userStatus.equals('true')}">
+		  <script type="text/javascript">			
+			alert("User added successfully");
+		</script>  
+		<% session.setAttribute("userStatus", "false"); %>  
+		</c:if> 
+		
+		
       	</div>
       </div>     
       <div class = "container">
@@ -82,7 +97,7 @@
 						    Developed by "Vishal Joshi" and maintained by "Infonet Center"
 						  </div>
 						  
-						    <div class="footer-copyright text-center py-3" id="totalfooter" >Â© 2018 Copyright:
+						    <div class="footer-copyright text-center py-3" id="totalfooter" >© 2018 Copyright:
 						    <a href="http://www.uniraj.ac.in/cct/"> Uniraj.ac.in</a>
 						    </div>
 						  

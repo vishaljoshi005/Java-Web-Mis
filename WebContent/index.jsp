@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <!DOCTYPE html>
+ <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +45,7 @@
 		   			</div>  
 		   			  
 		   			  <div class ="col-lg-12"  >
-		   			   <a href="http://www.uniraj.ac.in/cct/" class="btn btn-warning btn-lg btn-block " id="buttonleft" >College Main website</a>
+		   			   <a  target="_blank" href="http://www.uniraj.ac.in/cct/" class="btn btn-warning btn-lg btn-block " id="buttonleft" >College Main website</a>
 		   			 
 		   			  </div>
 		   		 </div>
@@ -104,7 +106,7 @@
 						    Developed by "Vishal Joshi" and maintained by "Infonet Center"
 						  </div>
 						  
-						    <div class="footer-copyright text-center py-3" id= "cfooter">Â© 2018 Copyright:
+						    <div class="footer-copyright text-center py-3" id= "cfooter">© 2018 Copyright:
 						    <a href="http://www.uniraj.ac.in/cct/"> Uniraj.ac.in</a>
 						    </div>
 						  
