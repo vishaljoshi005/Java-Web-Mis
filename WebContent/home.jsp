@@ -37,7 +37,7 @@
 	  
       </div>
       
-      <div class = "container">
+      <div class = "container-fluid">
       		<div class="bg-dark text-white">
       		<nav class="nav nav-pills flex-column flex-sm-row">
 			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="#">Home</a> 
@@ -50,7 +50,7 @@
       
       </div>
       
-      <div class= "container">
+      <div class= "container-fluid">
       
       <!-- Left side of the page -->
       	<div class= "row" id="row2">
@@ -61,10 +61,14 @@
       		<div class = "col-lg-6"> 
 	      			 <form action="./newuser" method="post">
 	      			 
+	      			 <div class="form-group">
+					<div class="alert alert-success text-dark text-center mt-1" role="alert">
+ 						 <b>Add New User</b>
+					</div>			
+				</div>
+
 					  <div class="form-group " >
-					  <button type="button" id="newuser" class="btn btn-secondary btn-lg btn-block " > <b>Add New User</b>
-					  </button>
-					  <br><label for="exampleInputEmail1"> Enter Username</label>
+					  <label for="exampleInputEmail1"> Enter Username</label>
 					    <input type="text" name="userName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter new username"/>
 					  </div>
 					  <div class="form-group ">
@@ -128,7 +132,7 @@
       </div>
       
       <!-- Footer -->     
-      <div class = "container">
+      <div class = "container-fluid">
 		  <div class ="row">
 			  <div class ="col-lg-12" >
 			  		<div class="card text-center" id="wholefooter"  >

@@ -13,9 +13,17 @@ import javax.servlet.http.HttpSession;
 
 import dao.LoginDao;
 
-@WebServlet("/LoginServlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
+	
+	 /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

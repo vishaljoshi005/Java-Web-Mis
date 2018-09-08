@@ -54,7 +54,7 @@
 		   		 
 		   		
 		   		<div class="col-lg-5 ">
-		   				<form action="./LoginServlet" method="post">
+		   				<form action="./login" method="post">
 		   					<div id= "form-pad">
 								  <div class="form-group">
 								    <label   id="username1">User Name</label>

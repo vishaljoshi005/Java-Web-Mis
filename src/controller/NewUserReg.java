@@ -1,16 +1,11 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import bean.NewUserBean;
 import dao.NewUserRegDao;
 
 /**
@@ -32,7 +27,6 @@ public class NewUserReg extends HttpServlet {
 		String password = request.getParameter("passWord");
 		String repassword = request.getParameter("rePassWord");
 
-		HttpSession session = request.getSession();
 		if (username != null && !username.trim().isEmpty()) {
 			System.out.println(" first if");
 			if (password != null && !password.trim().isEmpty()) {
