@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,11 +31,11 @@ public class AlumniRegister extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html;charset=UTF-8");
 		AlumniBean alumni = new AlumniBean();
 		alumni.setName(request.getParameter("name"));
 		alumni.setGender(request.getParameter("gender"));
-		alumni.setDob(request.getParameter("dob"));
+		alumni.setDob(Date.valueOf(request.getParameter("dob")));
 		alumni.setBatch(request.getParameter("batch"));
 		alumni.setEmail(request.getParameter("email"));
 		alumni.setContact(request.getParameter("contact"));

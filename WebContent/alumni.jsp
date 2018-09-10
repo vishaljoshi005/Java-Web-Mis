@@ -234,7 +234,7 @@
 				<div class="alert alert-danger text-center" id=findalumnialert role="alert">
 					  <b>Find Alumni</b>
 				</div>
-				<a href="viewsalumni.jsp" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni</a>
+				<a href="./viewalumni?page=1" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni</a>
 			</div>
 
 		</div>

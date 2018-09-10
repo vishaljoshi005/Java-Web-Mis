@@ -14,9 +14,10 @@ public class AlumniBean implements java.io.Serializable {
 		
 	}
 	
+	private int id;
 	private String name;
 	private String gender;
-	private String dob;
+	private Date dob;
 	private String batch;
 	private String email;
 	private String contact;
@@ -32,6 +33,13 @@ public class AlumniBean implements java.io.Serializable {
 		this.name = name;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id=id;
+	}
 	public String getGender() {
 		return gender;
 	}
@@ -41,12 +49,13 @@ public class AlumniBean implements java.io.Serializable {
 	}
 	
 	public Date getDob() {
-		return Date.valueOf(dob);
+		return dob;
 	}
 	
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
+	
 	
 	public String getBatch() {
 		return batch;
