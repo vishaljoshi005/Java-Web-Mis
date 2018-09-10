@@ -19,6 +19,21 @@
 	width:550px;
 	max-width:100%; 
 	}
+#findalumnialert{
+	margin-top:0.3em;
+	margin-left:4em;
+	width:600px;
+	max-width:100%
+}
+
+#viewalumnibutton{ 
+	margin-left:7em;
+	margin-bottom:0.5em;
+	padding: 0.4em 0.5em;
+	width:500px;
+	max-width:100%; 
+	}
+
 #wholefooter{
 	margin-top:1em;
 }

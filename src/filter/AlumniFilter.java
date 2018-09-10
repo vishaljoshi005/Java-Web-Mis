@@ -52,32 +52,56 @@ public class AlumniFilter implements Filter {
 	    		if(dob != null && !dob.trim().isEmpty()) {
 	    			if(batch != null && !batch.trim().isEmpty()) {
 	    				if(email != null && !email.trim().isEmpty()) {
+	    					if(contact != null && !contact.trim().isEmpty()) {
+	    						if(branch != null && !branch.trim().isEmpty()) {
+	    							if(occupation != null && !occupation.trim().isEmpty()) {
+	    								if(location != null && !location.trim().isEmpty()){
+	    									chain.doFilter(request, response);
+	    								}else {
+	    									request.setAttribute("locationEmpty", "true");
+								    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
+								    	    rd.include(request, response);  
+	    								}
+	    							}else {
+	    								request.setAttribute("occupationEmpty", "true");
+							    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
+							    	    rd.include(request, response);  
+	    							}
+	    						}else {
+	    							request.setAttribute("branchEmpty", "true");
+						    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
+						    	    rd.include(request, response);  
+	    						}
+	    					}else {
+	    						request.setAttribute("contactEmpty", "true");
+					    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
+					    	    rd.include(request, response);  
+	    					}
 	    					
 	    				}else {
 	    					request.setAttribute("emailEmpty", "true");
 				    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
-				    	    rd.forward(request, response);  
+				    	    rd.include(request, response);  
 	    				}
 	    				
 	    			}else {
 	    				request.setAttribute("batchEmpty", "true");
 			    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
-			    	    rd.forward(request, response);  
+			    	    rd.include(request, response);  
 	    				
 	    			}
 	    			
 	    		}else {
 	    			request.setAttribute("dobEmpty", "true");
 		    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
-		    	    rd.forward(request, response);  
+		    	    rd.include(request, response);  
 	    			
 	    		}
 	    		
 	    	}else {
 	    		request.setAttribute("genderEmpty", "true");
 	    	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
-	    	    rd.forward(request, response);  
-	    		
+	    	    rd.include(request, response);    		
 	    	}
 	    	// This should be inside the final if
 	    	//	chain.doFilter(request, response);//sends request to next resource  
@@ -85,7 +109,7 @@ public class AlumniFilter implements Filter {
 	    else{
 	    request.setAttribute("nameEmpty", "true");
 	    RequestDispatcher rd=request.getRequestDispatcher("alumni.jsp");  
-	    rd.forward(request, response);  
+	    rd.include(request, response);  
 	    }  
 
 		// pass the request along the filter chain

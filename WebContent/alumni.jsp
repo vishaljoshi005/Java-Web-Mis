@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,12 +52,14 @@
 		<div class="bg-dark text-white">
 			<nav class="nav nav-pills flex-column flex-sm-row">
 				<a class="flex-sm-fill text-sm-center nav-link text-white "
-					href="#">Home</a> <a
-					class="flex-sm-fill text-sm-center nav-link text-white active" href="#">Alumni</a>
-				<a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Students</a>
-				<a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
-				<a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Guest
-					Faculty E-Bill</a>
+					href="home.jsp">Home</a> <a
+					class="flex-sm-fill text-sm-center nav-link text-white active"
+					href="alumni.jsp">Alumni</a> <a
+					class="flex-sm-fill text-sm-center nav-link text-white"
+					href="student.jsp">Students</a> <a
+					class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
+				<a class="flex-sm-fill text-sm-center nav-link text-white"
+					href="ebill.jsp">Guest Faculty E-Bill</a>
 			</nav>
 		</div>
 
@@ -67,18 +69,19 @@
 		<div class="row" id="row2">
 			<div class="col-lg-6">
 				<form action="./alumniregister" method="post">
-				
-				<div class="form-group">
-					<div class="alert alert-primary text-center mt-1" role="alert">
- 						 <b>Add New Alumni</b>
-					</div>			
-				</div>
+
+					<div class="form-group">
+						<div
+							class="border border-info alert alert-primary text-center mt-1"
+							role="alert">
+							<b>Add New Alumni</b>
+						</div>
+					</div>
 
 					<div class="form-group ">
-						 <label for="exampleInputEmail1"> Name </label> <input
-							type="text" name="name" class="form-control"
-							id="exampleInputEmail1" aria-describedby="emailHelp"
-							placeholder="Name" />
+						<label for="exampleInputEmail1"> Name </label> <input type="text"
+							name="name" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Name" />
 					</div>
 
 					<div class="form-group">
@@ -100,9 +103,9 @@
 					<div class="form-group">
 						<label for="datepicker1">Date Of Birth</label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
-							class=" form-control border border-secondary shadow bg-white rounded" type="date" name="dob"
-							id="datepicker1">
-							<!-- pl-5 pr-5 mb-3 mt-0 -->
+							class=" form-control border border-primary bg-white rounded"
+							type="date" name="dob" id="datepicker1">
+						<!-- pl-5 pr-5 mb-3 mt-0 -->
 					</div>
 
 					<div class="form-group">
@@ -123,20 +126,24 @@
 							placeholder="Mobile">
 					</div>
 
-	
-				<div class="form-group ">
-						<label class="mb-0" for="industry1">Specialization</label> 
-				</div>
-				<div class= "form-group">		
-						<select class="shadow p-2 mb-3 mt-0 bg-white rounded" name="branch">
+
+					<div class="form-group ">
+						<label class="mb-0" for="industry1">Specialization</label>
+					</div>
+					<div class="form-group">
+						<select
+							class=" form-control border border-primary p-2 mb-3 mt-0 bg-white rounded"
+							name="branch">
 							<option selected>Choose</option>
-						    <option value="Information Technology">Information Technology</option>
-						    <option value="Nanotechnology">Nanotechnology</option>
-						    <option value="Biotechnology">Biotechnologyy</option>
-						    <option value="Cognitive and Neuroscience">Cognitive and Neuroscience</option>
+							<option value="Information Technology">Information
+								Technology</option>
+							<option value="Nanotechnology">Nanotechnology</option>
+							<option value="Biotechnology">Biotechnologyy</option>
+							<option value="Cognitive and Neuroscience">Cognitive and
+								Neuroscience</option>
 						</select>
-				</div>
-									
+					</div>
+
 
 
 
@@ -159,40 +166,77 @@
 
 				</form>
 			</div>
-	
-	<!-- In the case of the Adding alumni successful -->
-		<c:if test="${alumniStatus.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Alumni added successfully");
-		</script>
-		</c:if> 
 
-	<!-- In the case of the name is empty  -->
-		<c:if test="${nameEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Name field cannot be empty");
-		</script>
-		</c:if> 
-	<!-- In the case of the gender is empty  -->
-		<c:if test="${genderEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Gender field cannot be empty");
-		</script>
-		</c:if> 	
-	<!-- In the case of the dob is empty  -->
-		<c:if test="${dobEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Date of birth field cannot be empty");
-		</script>
-		</c:if> 	
-	<!-- In the case of the batch is empty  -->
-		<c:if test="${batchEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Batch field cannot be empty");
-		</script>
-		</c:if> 		
+			<!-- In the case of the Adding alumni successful -->
+			<c:if test="${alumniStatus.equals('true')}">
+				<script type="text/javascript">
+					alert("Alumni added successfully");
+				</script>
+			</c:if>
 
-			<div class="col-lg-6"></div>
+			<!-- In the case of the name is empty  -->
+			<c:if test="${nameEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Name field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the gender is empty  -->
+			<c:if test="${genderEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Gender field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the dob is empty  -->
+			<c:if test="${dobEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Date of birth field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the batch is empty  -->
+			<c:if test="${batchEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Batch field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the email is empty  -->
+			<c:if test="${emailEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Email field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the contact is empty  -->
+			<c:if test="${contactEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Contact field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the Branch is empty  -->
+			<c:if test="${branchEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Branch field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the Occupation is empty  -->
+			<c:if test="${occupationEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Occupation field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the location is empty  -->
+			<c:if test="${locationEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Location field cannot be empty");
+				</script>
+			</c:if>
+
+
+			<div class="col-lg-6">
+				<div class="alert alert-danger text-center" id=findalumnialert role="alert">
+					  <b>Find Alumni</b>
+				</div>
+				<a href="viewsalumni.jsp" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni</a>
+			</div>
+
 		</div>
 
 	</div>

@@ -59,74 +59,8 @@
       		
       <!-- Right side of the page -->	
       		<div class = "col-lg-6"> 
-	      			 <form action="./newuser" method="post">
-	      			 
-	      			 <div class="form-group">
-					<div class="alert alert-success text-dark text-center mt-1" role="alert">
- 						 <b>Add New User</b>
-					</div>			
-				</div>
-
-					  <div class="form-group " >
-					  <label for="exampleInputEmail1"> Enter Username</label>
-					    <input type="text" name="userName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter new username"/>
-					  </div>
-					  <div class="form-group ">
-					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" name="passWord" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-					  </div>
-					  <div class="form-group ">
-					    <label for="exampleInputPassword1">Password</label> <%--Below variable name caution--%>
-					    <input type="password" name="rePassWord" class="form-control" id="exampleInputPassword2" placeholder="Password"/>
-					  </div>
-					  
-					  <button type="submit" class="btn btn-primary btn-block" id="submitbutton"> Submit </button>
-					  				 
-					 </form>			
-      		</div>
-      		
- 		<!-- This is the pop up alert when user is successfully added -->
-		<c:if test="${userStatus.equals('true')}">
-		  <script type="text/javascript">			
-			alert("User added successfully");
-		</script>   
-		</c:if> 
-		
-		<!-- In the case of the username field is empty -->
-		<c:if test="${usernameEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Username cannot be empty");
-		</script>
-		</c:if> 
-		
-		<!-- In the case of the password field is empty -->
-		<c:if test="${passwordEmpty.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Password cannot be empty");
-		</script>
-		</c:if> 
-		
-		<!-- In the case of the Re-password field do not match -->
-		<c:if test="${rePassword.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Re-Password cannot be empty");
-		</script>
-		</c:if> 
-		
-		<!-- In the case of the password field do not match -->
-		<c:if test="${unequalPassword.equals('true')}">
-		  <script type="text/javascript">			
-			alert("Password and Re-Password does not match");
-		</script>
-		</c:if> 
-		
-		<!-- In the case of the username already exist-->
-		<c:if test="${usernameExist.equals('true')}">
-		  <script type="text/javascript">
-			alert("Username Already Exist");
-		</script>
-		</c:if> 
-		
+	      						
+      		</div>		
 		
       	</div>
       </div>

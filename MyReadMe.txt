@@ -10,4 +10,7 @@ alumni css has char encoding put in other files if needed
 home.jsp
 	This Jsp contains jstl for the user successfully added alert and also a scriptlet tag for the removal of attribute from the session object.
 	Above is for only the one alert
-	after this the alerts is done via the request attribute and request.getDispatcher() method
+	after this the alerts is done via the request attribute and request.getDispatcher() method.
+
+Works: 1. Add encryption to the password
+	   2. Session tracking
