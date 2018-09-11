@@ -12,6 +12,9 @@ home.jsp
 	Above is for only the one alert
 	after this the alerts is done via the request attribute and request.getDispatcher() method.
 
+Links :
+		1. Viewsalumni.jsp all href are in format of "viewalumni?id=value" and not in "./viewalumni?id=value" 
+		
 Works: 1. Add encryption to the password
 	   2. Session tracking
 	   3. Try with resources

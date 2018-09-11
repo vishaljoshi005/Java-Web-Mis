@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import bean.AlumniBean;
 import dao.ViewAlumniDao;
 
+
+//For handling the request to display the alumni records
+// This has the dependency of the parameter page 
+// Calls to this page is made by the alumni.jsp and also the DeleteAlumni servlet also
+// Inside the first if values are taken from the session and after processing values are added to the request
 /**
  * Servlet implementation class ViewAlumni
  */
@@ -34,6 +39,21 @@ public class ViewAlumni extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
+		
+		boolean deleteStatus=false;
+		
+		if(null!=request.getSession().getAttribute("deleteAlumniStatus")) {
+			System.out.println(request.getSession().getAttribute("deleteAlumniStatus"));
+			deleteStatus= (boolean)request.getSession().getAttribute("deleteAlumniStatus");
+			request.getSession().setAttribute("deleteAlumniStatus", null);
+			if(!deleteStatus) {
+				request.setAttribute("deleteStatus","true");
+			}else {
+				request.setAttribute("deleteStatus","false");
+			}
+		}
+		
+		
 		
 		int start=0;
 		int recordsPerPage=12;

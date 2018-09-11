@@ -26,6 +26,9 @@ Electronic Information Management System
 	2 For alumni url pattern ="./alumniregister"
 	3 For Login = "./login"
 	
+102.1 URL pattern for the get requests
+	1.ViewAlumni.java and DeleteAlumni.java has get methods handlers. If problem occures then url pattern of the should be changed.		
+	
 103. AlumniBean class:
 	DATE: Is taken as string from the jsp and inside the bean class it is converted to the sql accepted format to insert in the sql.
 	
@@ -34,3 +37,10 @@ Electronic Information Management System
 	
 105. Miscellaneous
 	1. ViewAlumni JSP : The JSP to display the records of the alumni's has page name VIEWSALUMNI, there's "S" added in the page.
+	2. ViewAlumni DAO : 2.1 Handles the number of rows output
+						2.2 Handles the records fetch 
+						2.3 Handles the delete of the record of alumni.
+106. Dependencies
+ 		1.Servlet dependencies
+ 			1.1 ViewAlumni servlet needs parameter name "page" to work. 
+ 			    : Any other page requesting viewalumni must give page parameter with get request.

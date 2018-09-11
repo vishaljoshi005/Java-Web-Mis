@@ -63,5 +63,25 @@ public class ViewAlumniDao {
 		return alumniRecords;
 
 	}
+	
+	public static boolean deleteAlumni(int id) {
+		boolean alumniStatus= false;
+		int value=0;
+		String query = "DELETE FROM alumni	WHERE id="+id;
+		try {
+			Connection con = SqlConnect.getConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			value= ps.executeUpdate();
+			System.out.println(value);
+			if(value>0) {
+				alumniStatus =true;
+			}
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("Error while deleting the alumni data" + e);
+		}
+		return alumniStatus;
+		
+	}
 
 }

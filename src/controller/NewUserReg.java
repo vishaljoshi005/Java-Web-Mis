@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.NewUserRegDao;
 
+
+//This handles the add of the new user for the website
 /**
  * Servlet implementation class NewUserReg
  */

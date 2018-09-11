@@ -40,8 +40,8 @@
       <div class = "container-fluid">
       		<div class="bg-dark text-white">
       		<nav class="nav nav-pills flex-column flex-sm-row">
-			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="home.jsp">Home</a> 
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="alumni.jsp">Alumni</a> 
+			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="home.jsp">Home</a> 
+			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="ebill.jsp">Guest Faculty E-Bill</a>
@@ -73,6 +73,7 @@
       					<th>Branch</th>
       					<th>Occupation</th>
       					<th>Location</th>
+      					<th>Delete</th>
       				</tr>
       				</thead>
       				<!-- If there is any records in the database -->
@@ -88,7 +89,8 @@
 				                <td>${alumni.getContact()}</td>
 				                <td>${alumni.getBranch()}</td>
 				                <td>${alumni.getOccupation()}</td>
-				                <td>${alumni.getLocation()}</td>    
+				                <td>${alumni.getLocation()}</td>
+				                <td><a href="./deletealumni?id=${alumni.getId()}">Delete</a></td>    
 				            </tr>
 				        </c:forEach>            			
         			</c:if>
@@ -157,6 +159,22 @@
 		
       	</div>
       </div>
+      
+      <!-- In the case of Alumni cannot be deleted  -->
+			<c:if test="${deleteStatus.equals('true')}">
+				<script type="text/javascript">
+					alert("Alumni Record Cannot be Deleted");
+				</script>
+			</c:if>
+			<% session.setAttribute("deleteAlumniStatus", null); %>
+			
+		<!-- In the case of Alumni record deleted  -->
+			<c:if test="${deleteStatus.equals('false')}">
+				<script type="text/javascript">
+					alert("Alumni Record Deleted");
+				</script>
+			</c:if>
+			<% session.setAttribute("deleteAlumniStatus", null); %>
       
       <!-- Footer -->     
       <div class = "container-fluid">
