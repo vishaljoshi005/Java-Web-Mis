@@ -7,8 +7,9 @@ import java.sql.SQLException;
 public class LoginDao {
 	public static boolean validate (String name, String password) {
 		boolean status=false;
+		Connection con = null;
 		try {
-			Connection con= SqlConnect.getConnection();
+			con= SqlConnect.getConnection();
 			PreparedStatement ps = con.prepareStatement("select * from users where username=? and password=?");
 			ps.setString(1, name);
 			ps.setString(2, password);
@@ -17,6 +18,14 @@ public class LoginDao {
 			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error while checking the username and password"+e);
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return status;
 	}

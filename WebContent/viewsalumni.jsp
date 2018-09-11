@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Home</title>
+    <title>Alumni Records</title>
     <link rel="stylesheet" href="./style/home.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -54,11 +54,104 @@
       
       <!-- Left side of the page -->
       	<div class= "row" id="row2">
-      		<div class = "col-lg-6">
+      		<div class = "col-lg-1">
+      		</div>
+      
+        <!-- Middle side of the page -->
+      	
+      		<div class = "col-lg-10">
+      			<table class= "table table-striped table-bordered mt-1">
+      				<thead>
+      				<tr style="background-color: #F4A460;">
+      					<th>Id</th>
+      					<th>Name</th>
+      					<th>Gender</th>
+      					<th>Dob</th>
+      					<th>Batch</th>
+      					<th>Email</th>
+      					<th>Contact</th>
+      					<th>Branch</th>
+      					<th>Occupation</th>
+      					<th>Location</th>
+      				</tr>
+      				</thead>
+      				<!-- If there is any records in the database -->
+      				 <c:if test="${alumniRecordsFound.equals('true')}">
+      				 	<c:forEach items="${alumniRecords}" var="alumni">
+				            <tr>
+				                <td>${alumni.getId()}</td>
+				                <td>${alumni.getName()}</td>
+				                <td>${alumni.getGender()}</td>
+				                <td>${alumni.getDob()}</td>
+				                <td>${alumni.getBatch()}</td>
+				                <td>${alumni.getEmail()}</td>
+				                <td>${alumni.getContact()}</td>
+				                <td>${alumni.getBranch()}</td>
+				                <td>${alumni.getOccupation()}</td>
+				                <td>${alumni.getLocation()}</td>    
+				            </tr>
+				        </c:forEach>            			
+        			</c:if>
+        			
+        			
+        			<!-- If there is NO records in the database -->
+      				 <c:if test="${alumniRecordsFound.equals('false')}">
+      				 	
+				            <tr>
+				                <td>No Records Found</td>
+    
+				            </tr>
+				       
+            			
+        			</c:if> 
+        			  
+      			</table>
+      			
+      	<div >
+      	<c:if test="${alumniRecordsFound.equals('true')}">
+        			
+        			<nav aria-label="Navigation for Alumni" >
+			    <ul class="pagination justify-content-center" style="background-color: #EEE;">
+			        <c:if test="${currentPage != 1}">
+			            <li class="page-item"><a class="page-link" 
+			                href="viewalumni?page=${currentPage-1}">Previous</a>
+			            </li>
+			        </c:if>
+			
+			        <c:forEach begin="1" end="${numOfPages}" var="i">
+			            <c:choose>
+			                <c:when test="${currentPage eq i}">
+			                    <li class="page-item active"><a class="page-link">
+			                            ${i} <span class="sr-only">(current)</span></a>
+			                    </li>
+			                </c:when>
+			                <c:otherwise>
+			                    <li class="page-item"><a class="page-link" 
+			                        href="viewalumni?page=${i}">${i}</a>
+			                    </li>
+			                </c:otherwise>
+			            </c:choose>
+			        </c:forEach>
+			
+			        <c:if test="${currentPage lt numOfPages}">
+			            <li class="page-item"><a class="page-link" 
+			                href="viewalumni?page=${currentPage+1}">Next</a>
+			            </li>
+			        </c:if>              
+			    </ul>
+			</nav>
+        			
+        			</c:if>
+        	
+        	</div>   
+        					
+      	
+      			
+      		
       		</div>
       		
       <!-- Right side of the page -->	
-      		<div class = "col-lg-6"> 
+      		<div class = "col-lg-1"> 
 	      						
       		</div>		
 		

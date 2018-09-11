@@ -31,8 +31,10 @@ public class ViewAlumniDao {
 	
 	
 	public static List<AlumniBean> getAlumni(int start) {
+		System.out.println("From Dao"+start);
 		List<AlumniBean> alumniRecords = new ArrayList<>();
 		String query = "SELECT * FROM alumni LIMIT "+(start)+","+12;
+		System.out.println("From Dao"+start);
 		try {
 			Connection con = SqlConnect.getConnection();
 			PreparedStatement ps = con.prepareStatement(query);

@@ -1,4 +1,4 @@
-Project Problems
+Project problems
 1.	If problem occurs due to server just clean the project and run again	
 2. Adding external jar can be a problem First go to build path then add then again go to build path then select the
 assemble option then add that jar again then it will run properly.
@@ -14,3 +14,19 @@ home.jsp
 
 Works: 1. Add encryption to the password
 	   2. Session tracking
+	   3. Try with resources
+	   4. All the DAO must be updated to handle the no data from mysql also.
+Points: 1. Session for security
+		2. cookies
+		3. data flow
+		4. encrypted password
+		5. Resource management jdbc
+		6. performance pagination
+		7. Kept http protocol stateless
+		8. even if error comes from jdbc server wont crash
+		9. MVC
+		10. No logics in jsp
+		11.
+		
+		
+		

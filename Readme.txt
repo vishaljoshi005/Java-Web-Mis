@@ -5,7 +5,7 @@ Electronic Information Management System
  	1. For java classes: According to convention
  	2. url patterns : small letters
  	3. method names :  camel case
- 	
+ 	4. View JSP pages: All the view jsp pages are in small letters.
 100.Variable:
 	1. Variables names in the JSP pages are camel case.
 	2. In Java classes : all in camel case
@@ -31,3 +31,6 @@ Electronic Information Management System
 	
 104. Filter	
 	1. Alumniregister servlet and AlumniFilter ServletFilter has url pattern: "/alumniregister"
+	
+105. Miscellaneous
+	1. ViewAlumni JSP : The JSP to display the records of the alumni's has page name VIEWSALUMNI, there's "S" added in the page.
