@@ -141,7 +141,7 @@
 						  </div>
 						  
 						    <div class="footer-copyright text-center py-3" id="totalfooter" >© 2018 Copyright:
-						    <a href="http://www.uniraj.ac.in/cct/"> Uniraj.ac.in</a>
+						    <a target="_blank" href="http://www.uniraj.ac.in/cct/"> Uniraj.ac.in</a>
 						    </div>
 						  
 						</div>

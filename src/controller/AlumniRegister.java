@@ -48,6 +48,8 @@ public class AlumniRegister extends HttpServlet {
 			request.setAttribute("alumniStatus", "true");
 			request.getRequestDispatcher("alumni.jsp").forward(request, response);
 		}else {
+			request.setAttribute("alumniStatus", "false");
+			request.getRequestDispatcher("alumni.jsp").forward(request, response);
 			System.out.println("Something gone wrong");
 		}
 		

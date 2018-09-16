@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Alumni</title>
-<link rel="stylesheet" href="./style/alumni.css">
+<title>Student</title>
+<link rel="stylesheet" href="./style/student.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -53,9 +53,9 @@
 			<nav class="nav nav-pills flex-column flex-sm-row">
 				<a class="flex-sm-fill text-sm-center nav-link text-white "
 					href="home.jsp">Home</a> <a
-					class="flex-sm-fill text-sm-center nav-link text-white active"
-					href="alumni.jsp">Alumni</a> <a
 					class="flex-sm-fill text-sm-center nav-link text-white"
+					href="alumni.jsp">Alumni</a> <a
+					class="flex-sm-fill text-sm-center nav-link text-white active"
 					href="student.jsp">Students</a> <a
 					class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
 				<a class="flex-sm-fill text-sm-center nav-link text-white"
@@ -68,22 +68,27 @@
 	<div class="container-fluid">
 		<div class="row" id="row2">
 			<div class="col-lg-6">
-				<form action="./alumniregister" method="post">
+				<form action="./studentregister" method="post">
 
 					<div class="form-group">
 						<div
 							class="border border-info alert alert-primary text-center mt-1"
 							role="alert">
-							<b>Add New Alumni</b>
+							<b>Add New Student</b>
 						</div>
 					</div>
 
 					<div class="form-group ">
-						<label for="exampleInputEmail1"> Name </label> <input type="text"
-							name="name" class="form-control" id="exampleInputEmail1"
+						<label for="exampleInputEmail1">First Name </label> <input type="text"
+							name="firstName" class="form-control" id="exampleInputEmail1"
 							aria-describedby="emailHelp" placeholder="Name" />
 					</div>
-
+					<div class="form-group ">
+						<label for="exampleInputEmail1">Last Name </label> <input type="text"
+							name="lastName" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Name" />
+					</div>
+					
 					<div class="form-group">
 						<label for="option1">Gender</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<div class="form-check form-check-inline">
@@ -100,6 +105,19 @@
 
 					</div>
 					<div class="clearfix"></div>
+					
+					<div class="form-group ">
+						<label for="exampleInputEmail1">Father's Name </label> <input type="text"
+							name="fatherName" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Name" />
+					</div>
+					<div class="form-group ">
+						<label for="exampleInputEmail1">Mother's Name </label> <input type="text"
+							name="motherName" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp" placeholder="Name" />
+					</div>
+
+					
 					<div class="form-group">
 						<label for="datepicker1">Date Of Birth</label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
@@ -109,8 +127,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="batch1">Batch</label> <input type="number"
-							class="form-control" min="2006" name="batch" id="batch1"
+						<label for="batch1">Admission Year</label> <input type="number"
+							class="form-control" min="2006" name="admissionYear" id="batch1"
 							placeholder="Year">
 					</div>
 
@@ -125,42 +143,13 @@
 							class="form-control" id="contact1" name="contact"
 							placeholder="Mobile">
 					</div>
-
-
-					<div class="form-group ">
-						<label class="mb-0" for="industry1">Specialization</label>
-					</div>
+					
 					<div class="form-group">
-						<select
-							class=" form-control border border-primary p-2 mb-3 mt-0 bg-white rounded"
-							name="branch">
-							<option selected>Choose</option>
-							<option value="Information Technology">Information
-								Technology</option>
-							<option value="Nanotechnology">Nanotechnology</option>
-							<option value="Biotechnology">Biotechnologyy</option>
-							<option value="Cognitive and Neuroscience">Cognitive and
-								Neuroscience</option>
-						</select>
+						<label for="address1">Address</label> <input type="text"
+							class="form-control" id="address1" name="address"
+							placeholder="Address with Pincode">
 					</div>
-
-
-
-
-					<div class="form-group">
-						<label for="occupation1">Current Occupation</label> <input
-							type="text" class="form-control" id="occupation1"
-							name="occupation" placeholder="Job/Self-employed">
-					</div>
-
-					<div class="form-group">
-						<label for="location1">Current Location</label> <input type="text"
-							class="form-control" id="location1" name="location"
-							placeholder="City">
-					</div>
-
-
-
+					
 					<button type="submit" class="btn btn-primary btn-block"
 						id="submitbutton">Save</button>
 
@@ -168,34 +157,55 @@
 			</div>
 
 			<!-- In the case of the Adding alumni successful -->
-			<c:if test="${alumniStatus.equals('true')}">
+			<c:if test="${studentStatus.equals('true')}">
 				<script type="text/javascript">
-					alert("Alumni added successfully");
+					alert("Student added successfully");
 				</script>
 			</c:if>
 
-			<!-- In the case of the name is empty  -->
-			<c:if test="${nameEmpty.equals('true')}">
+			<!-- In the case of the first name is empty  -->
+			<c:if test="${firstNameEmpty.equals('true')}">
 				<script type="text/javascript">
-					alert("Name field cannot be empty");
+					alert("FirstName field cannot be empty");
 				</script>
 			</c:if>
+			
+			<!-- In the case of the lastname is empty  -->
+			<c:if test="${lastNameEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("LastName field cannot be empty");
+				</script>
+			</c:if>
+			
 			<!-- In the case of the gender is empty  -->
 			<c:if test="${genderEmpty.equals('true')}">
 				<script type="text/javascript">
 					alert("Gender field cannot be empty");
 				</script>
 			</c:if>
+			<!-- In the case of the father name is empty  -->
+			<c:if test="${fatherNameEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Father's name field cannot be empty");
+				</script>
+			</c:if>
+			<!-- In the case of the mother name is empty  -->
+			<c:if test="${motherNameEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("MotherName field cannot be empty");
+				</script>
+			</c:if>
+			
 			<!-- In the case of the dob is empty  -->
 			<c:if test="${dobEmpty.equals('true')}">
 				<script type="text/javascript">
 					alert("Date of birth field cannot be empty");
 				</script>
 			</c:if>
-			<!-- In the case of the batch is empty  -->
-			<c:if test="${batchEmpty.equals('true')}">
+			<!-- In the case of the Admission is empty  -->
+			<c:if test="${admissionYearEmpty.equals('true')}">
 				<script type="text/javascript">
-					alert("Batch field cannot be empty");
+					alert("Admission Year field cannot be empty");
 				</script>
 			</c:if>
 			<!-- In the case of the email is empty  -->
@@ -210,36 +220,24 @@
 					alert("Contact field cannot be empty");
 				</script>
 			</c:if>
-			<!-- In the case of the Branch is empty  -->
-			<c:if test="${branchEmpty.equals('true')}">
+			<!-- In the case of the adddress is empty  -->
+			<c:if test="${addressEmpty.equals('true')}">
 				<script type="text/javascript">
-					alert("Branch field cannot be empty");
-				</script>
-			</c:if>
-			<!-- In the case of the Occupation is empty  -->
-			<c:if test="${occupationEmpty.equals('true')}">
-				<script type="text/javascript">
-					alert("Occupation field cannot be empty");
+					alert("Address field cannot be empty");
 				</script>
 			</c:if>
 			<!-- In the case of the location is empty  -->
-			<c:if test="${locationEmpty.equals('true')}">
+			<c:if test="${studentStatus.equals('false')}">
 				<script type="text/javascript">
-					alert("Location field cannot be empty");
-				</script>
-			</c:if>
-			<!-- In the case of the location is empty  -->
-			<c:if test="${alumniStatus.equals('false')}">
-				<script type="text/javascript">
-					alert("Alumni record cannot be added");
+					alert("Student record cannot be added");
 				</script>
 			</c:if>
 
 			<div class="col-lg-6">
 				<div class="alert alert-danger text-center" id=findalumnialert role="alert">
-					  <b>Find Alumni</b>
+					  <b>Find Student</b>
 				</div>
-				<a href="./viewalumni?page=1" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni</a>
+				<a href="./viewstudent?page=1" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Students</a>
 			</div>
 
 		</div>

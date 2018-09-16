@@ -6,6 +6,7 @@ Electronic Information Management System
  	2. url patterns : small letters
  	3. method names :  camel case
  	4. View JSP pages: All the view jsp pages are in small letters.
+ 	5. SQL TABLE : Alumni table in the mysql has column name "ID" in caps and other column's are in lowercase.
 100.Variable:
 	1. Variables names in the JSP pages are camel case.
 	2. In Java classes : all in camel case
@@ -44,3 +45,5 @@ Electronic Information Management System
  		1.Servlet dependencies
  			1.1 ViewAlumni servlet needs parameter name "page" to work. 
  			    : Any other page requesting viewalumni must give page parameter with get request.
+ 			1.2 ViewStudent servlet needs parameter name "page" to work. 
+ 			    : Any other page requesting viewalumni must give page parameter with get request.    

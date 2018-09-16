@@ -19,6 +19,7 @@ Works: 1. Add encryption to the password
 	   2. Session tracking
 	   3. Try with resources
 	   4. All the DAO must be updated to handle the no data from mysql also.
+	   5. Check the contact input alumni ands student
 Points: 1. Session for security
 		2. cookies
 		3. data flow
@@ -29,7 +30,8 @@ Points: 1. Session for security
 		8. even if error comes from jdbc server wont crash
 		9. MVC
 		10. No logics in jsp
-		11.
+		11.Google api login	
+		12. Student will be able to view alumni
 		
 		
 		

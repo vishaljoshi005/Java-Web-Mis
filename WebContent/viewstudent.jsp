@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alumni Records</title>
-    <link rel="stylesheet" href="./style/viewsalumni.css"> 
+    <title>Student Records</title>
+    <link rel="stylesheet" href="./style/viewstudent.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -41,8 +41,8 @@
       		<div class="bg-dark text-white">
       		<nav class="nav nav-pills flex-column flex-sm-row">
 			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="home.jsp">Home</a> 
-			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="alumni.jsp">Alumni</a> 
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="alumni.jsp">Alumni</a> 
+			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="student.jsp">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="ebill.jsp">Guest Faculty E-Bill</a>
 			</nav>
@@ -54,50 +54,50 @@
       
       <!-- Left side of the page -->
       	<div class= "row" id="row2">
-      		<div class = "col-lg-1">
-      		</div>
       
         <!-- Middle side of the page -->
       	
-      		<div class = "col-lg-10">
+      		<div class = "col-lg-12">
       			<table class= "table table-striped table-bordered mt-1">
       				<thead>
       				<tr style="background-color: #F4A460;">
       					<th>Id</th>
-      					<th>Name</th>
+      					<th>First Name</th>
+      					<th>Last Name</th>
       					<th>Gender</th>
+      					<th>Father's Name</th>
+      					<th>Mother's Name</th>
       					<th>Dob</th>
-      					<th>Batch</th>
+      					<th>Admission Year</th>
       					<th>Email</th>
       					<th>Contact</th>
-      					<th>Branch</th>
-      					<th>Occupation</th>
-      					<th>Location</th>
+      					<th>Address</th>
       					<th>Delete</th>
       				</tr>
       				</thead>
       				<!-- If there is any records in the database -->
-      				 <c:if test="${alumniRecordsFound.equals('true')}">
-      				 	<c:forEach items="${alumniRecords}" var="alumni">
+      				 <c:if test="${studentRecordsFound.equals('true')}">
+      				 	<c:forEach items="${studentRecords}" var="student">
 				            <tr>
-				                <td>${alumni.getId()}</td>
-				                <td>${alumni.getName()}</td>
-				                <td>${alumni.getGender()}</td>
-				                <td>${alumni.getDob()}</td>
-				                <td>${alumni.getBatch()}</td>
-				                <td>${alumni.getEmail()}</td>
-				                <td>${alumni.getContact()}</td>
-				                <td>${alumni.getBranch()}</td>
-				                <td>${alumni.getOccupation()}</td>
-				                <td>${alumni.getLocation()}</td>
-				                <td><a href="./deletealumni?id=${alumni.getId()}">Delete</a></td>    
+				                <td>${student.getId()}</td>
+				                <td>${student.getFirstName()}</td>
+				                <td>${student.getLastName()}</td>
+				                <td>${student.getGender()}</td>
+				                <td>${student.getFatherName()}</td>
+				                <td>${student.getMotherName()}</td>
+				                <td>${student.getDob()}</td>
+				                <td>${student.getAdmissionYear()}</td>
+				                <td>${student.getEmail()}</td>
+				                <td>${student.getContact()}</td>
+				                <td>${student.getAddress()}</td>
+				                <td><a href="./deletestudent?id=${student.getId()}">Delete</a></td>    
 				            </tr>
 				        </c:forEach>            			
         			</c:if>
         			
         			
         			<!-- If there is NO records in the database -->
-      				 <c:if test="${alumniRecordsFound.equals('false')}">
+      				 <c:if test="${studentRecordsFound.equals('false')}">
       				 	
 				            <tr>
 				                <td>No Records Found</td>
@@ -110,13 +110,13 @@
       			</table>
       			
       	<div >
-      	<c:if test="${alumniRecordsFound.equals('true')}">
+      	<c:if test="${studentRecordsFound.equals('true')}">
         			
         			<nav aria-label="Navigation for Alumni" >
 			    <ul class="pagination justify-content-center" style="background-color: #EEE;">
 			        <c:if test="${currentPage != 1}">
 			            <li class="page-item"><a class="page-link" 
-			                href="viewalumni?page=${currentPage-1}">Previous</a>
+			                href="viewstudent?page=${currentPage-1}">Previous</a>
 			            </li>
 			        </c:if>
 			
@@ -129,7 +129,7 @@
 			                </c:when>
 			                <c:otherwise>
 			                    <li class="page-item"><a class="page-link" 
-			                        href="viewalumni?page=${i}">${i}</a>
+			                        href="viewstudent?page=${i}">${i}</a>
 			                    </li>
 			                </c:otherwise>
 			            </c:choose>
@@ -137,7 +137,7 @@
 			
 			        <c:if test="${currentPage lt numOfPages}">
 			            <li class="page-item"><a class="page-link" 
-			                href="viewalumni?page=${currentPage+1}">Next</a>
+			                href="viewstudent?page=${currentPage+1}">Next</a>
 			            </li>
 			        </c:if>              
 			    </ul>
@@ -153,28 +153,25 @@
       		</div>
       		
       <!-- Right side of the page -->	
-      		<div class = "col-lg-1"> 
-	      						
-      		</div>		
-		
+      		
       	</div>
       </div>
       
       <!-- In the case of Alumni cannot be deleted  -->
 			<c:if test="${deleteStatus.equals('true')}">
 				<script type="text/javascript">
-					alert("Alumni Record Cannot be Deleted");
+					alert("Student Record Cannot be Deleted");
 				</script>
 			</c:if>
-			<% session.setAttribute("deleteAlumniStatus", null); %>
+			<% session.setAttribute("deleteStudentStatus", null); %>
 			
 		<!-- In the case of Alumni record deleted  -->
 			<c:if test="${deleteStatus.equals('false')}">
 				<script type="text/javascript">
-					alert("Alumni Record Deleted");
+					alert("Student Record Deleted");
 				</script>
 			</c:if>
-			<% session.setAttribute("deleteAlumniStatus", null); %>
+			<% session.setAttribute("deleteStudentStatus", null); %>
       
       <!-- Footer -->     
       <div class = "container-fluid">
