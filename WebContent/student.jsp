@@ -72,9 +72,8 @@
 
 					<div class="form-group">
 						<div
-							class="border border-info alert alert-primary text-center mt-1"
-							role="alert">
-							<b>Add New Student</b>
+							class="border border-info alert  text-center text-white mt-2 pb-0" style="background-color:MediumSeaGreen;" role="alert">
+							<p style="font-size:25px;">Add New Student</p>
 						</div>
 					</div>
 
@@ -150,7 +149,7 @@
 							placeholder="Address with Pincode">
 					</div>
 					
-					<button type="submit" class="btn btn-primary btn-block"
+					<button type="submit" class="btn btn-primary btn-block" style="background-color:#1d1d1d;"
 						id="submitbutton">Save</button>
 
 				</form>
@@ -234,10 +233,11 @@
 			</c:if>
 
 			<div class="col-lg-6">
-				<div class="alert alert-danger text-center" id=findalumnialert role="alert">
-					  <b>Find Student</b>
+				<div class="alert alert-danger text-dark text-center mt-2 pb-0" style="background-color:#EAE6DA;" id=findalumnialert role="alert">
+					  <p style="font-size:25px;">Find Student</p>
 				</div>
-				<a href="./viewstudent?page=1" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Students</a>
+				<!-- This br is temporary --> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<a href="./viewstudent?page=1" target="_blank" class="btn btn-lg text-white" id="viewalumnibutton" style="background-color:#FF7F50; font-size:18px;"  role="button" aria-pressed="true">View All Students</a>
 			</div>
 
 		</div>

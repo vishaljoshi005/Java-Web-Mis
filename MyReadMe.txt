@@ -17,9 +17,12 @@ Links :
 		
 Works: 1. Add encryption to the password
 	   2. Session tracking
-	   3. Try with resources
+	   3. Try with resources JDBC
 	   4. All the DAO must be updated to handle the no data from mysql also.
 	   5. Check the contact input alumni ands student
+	   6. Add the filter to the login servlet
+	   7. Uppercase and trim in the inputs of data alumni student
+	   
 Points: 1. Session for security
 		2. cookies
 		3. data flow
@@ -32,6 +35,7 @@ Points: 1. Session for security
 		10. No logics in jsp
 		11.Google api login	
 		12. Student will be able to view alumni
+		13. For the fees name and dob cz no enrollment number available
 		
 		
 		

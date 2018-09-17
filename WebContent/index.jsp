@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
     <!DOCTYPE html>
  <html lang="en">
   <head>
@@ -91,6 +92,19 @@
 		   			          
 		   			  			
 						</form>
+						<!-- In the case of the username is empty  -->
+						<c:if test="${usernameEmpty.equals('true')}">
+						<script type="text/javascript">
+						alert("Username field cannot be empty");
+						</script>
+						</c:if>
+							<!-- In the case of the password is empty  -->
+						<c:if test="${passwordEmpty.equals('true')}">
+						<script type="text/javascript">
+						alert("Password field cannot be empty");
+						</script>
+						</c:if>
+						
 		   				
 		   		</div>
 	  			

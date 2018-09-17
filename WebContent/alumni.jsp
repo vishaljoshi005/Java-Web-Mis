@@ -72,9 +72,9 @@
 
 					<div class="form-group">
 						<div
-							class="border border-info alert alert-primary text-center mt-1"
+							class=" alert alert-primary text-center mt-1 pb-0"
 							role="alert">
-							<b>Add New Alumni</b>
+							<p style="font-size:25px;">Add New Alumni</p>
 						</div>
 					</div>
 
@@ -236,10 +236,11 @@
 			</c:if>
 
 			<div class="col-lg-6">
-				<div class="alert alert-danger text-center" id=findalumnialert role="alert">
-					  <b>Find Alumni</b>
+				<div class="alert alert-danger text-center pb-0" id=findalumnialert role="alert">
+					  <p style="font-size:25px;">Find Alumni</p>
 				</div>
-				<a href="./viewalumni?page=1" class="btn btn-secondary btn-lg" id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni</a>
+				<!-- This br is temporary --> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<a href="./viewalumni?page=1" target="_blank" class="btn btn-secondary btn-lg " id="viewalumnibutton" style="font-size:18px;" role="button" aria-pressed="true">View All Alumni</a>
 			</div>
 
 		</div>

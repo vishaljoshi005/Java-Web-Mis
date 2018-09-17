@@ -22,7 +22,9 @@ public class StudentRegDao {
 		try {
 			Connection con = SqlConnect.getConnection();
 			java.sql.Statement table = con.createStatement();
-			table.execute(createTable);
+			Object a =table.execute(createTable);
+			//Check the output of the statement execute
+			System.out.println(a);
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, user.getFirstName());
 			ps.setString(2, user.getLastName());

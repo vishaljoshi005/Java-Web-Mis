@@ -58,9 +58,10 @@
         <!-- Middle side of the page -->
       	
       		<div class = "col-lg-12">
-      			<table class= "table table-striped table-bordered mt-1">
+      		<div class="table-responsive">
+      			<table class= "table table-striped table-borderless mt-2">
       				<thead>
-      				<tr style="background-color: #F4A460;">
+      				<tr style="background-color: #87CEEB;">
       					<th>Id</th>
       					<th>First Name</th>
       					<th>Last Name</th>
@@ -69,9 +70,9 @@
       					<th>Mother's Name</th>
       					<th>Dob</th>
       					<th>Admission Year</th>
-      					<th>Email</th>
+      					<th class="text-center">Email</th>
       					<th>Contact</th>
-      					<th>Address</th>
+      					<th class="text-center">Address</th>
       					<th>Delete</th>
       				</tr>
       				</thead>
@@ -108,6 +109,7 @@
         			</c:if> 
         			  
       			</table>
+      			</div>
       			
       	<div >
       	<c:if test="${studentRecordsFound.equals('true')}">
