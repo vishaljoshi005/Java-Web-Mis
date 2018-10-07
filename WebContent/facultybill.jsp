@@ -271,7 +271,7 @@
 						<label for="exampleInputEmail24">Month</label> 
 			</div>			
 			<div class="form-group ">
-					<select  class=" form-control border border-primary p-2 mb-1 mt-0 pt-0 mb-0 bg-white rounded" name="time">
+					<select  class=" form-control border border-primary p-2 mb-1 mt-0 pt-0 mb-0 bg-white rounded" name="month">
 					    <option selected>Select Month</option>					    
 					    <option value="01">January</option>
 					    <option value="02">February</option>
@@ -291,7 +291,7 @@
 			<div class="form-group mb-0">
 						
 					    <label for="exampleInputEmail61">Year</label>
-					    <input type="number" class="form-control" id="exampleInputEmail61" aria-describedby="yearHelp" placeholder="20**">
+					    <input type="number" name="year" class="form-control" id="exampleInputEmail61" aria-describedby="yearHelp" placeholder="20**">
 					    <small id="yearHelp" class="form-text text-muted">Please follow the standard input like "2018" only.</small>
 					  
 			</div>
