@@ -71,6 +71,11 @@ public class ViewAlumni extends HttpServlet {
 		
 		//To get the number of the rows
 		int rows = ViewAlumniDao.getRows();
+		
+		if(rows>0) {} else {
+			
+		}
+		
 		int numOfPages = rows/recordsPerPage; //Records per page is 12 
 		
 		if(numOfPages%recordsPerPage>0) {

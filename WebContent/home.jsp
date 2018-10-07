@@ -43,8 +43,8 @@
 			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="home.jsp">Home</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="#">Faculty</a>
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="ebill.jsp">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="addfaculty.jsp">Faculty</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="./ebill">Guest Faculty E-Bill</a>
 			</nav>
 			</div>
       

@@ -22,7 +22,14 @@ Works: 1. Add encryption to the password
 	   5. Check the contact input alumni ands student
 	   6. Add the filter to the login servlet
 	   7. Uppercase and trim in the inputs of data alumni student
-	   
+	   8. Add a filter to the addfaculty.
+	   9. Changes to the create table statements
+	   10. Bill Filter
+	   11. Whole view alumni code has to be in the if rows else block
+Corners:
+		1.In Save bill the name will be fetched inside dao.
+		
+			   
 Points: 1. Session for security
 		2. cookies
 		3. data flow
