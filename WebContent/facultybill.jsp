@@ -296,7 +296,7 @@
 					  
 			</div>
 				
-			<button type="submit" class="btn btn-primary btn-block mt-2" style="background-color:#1d1d1d;"
+			<button type="submit" target="_blank" class="btn btn-primary btn-block mt-2" style="background-color:#1d1d1d;"
 						id="submitbutton">Generate
 			</button>	
 				

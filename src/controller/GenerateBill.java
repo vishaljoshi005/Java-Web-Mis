@@ -230,7 +230,7 @@ public class GenerateBill extends HttpServlet {
         
            Paragraph lc = new Paragraph();
            
-           lc.add(new Text("Name:").setFontSize(10).setBold());
+           lc.add(new Text("Name: ").setFontSize(10).setBold());
            lc.add(faculty.getTitle()+" "+faculty.getFacultyName());
            
            lc.add("\n");
@@ -250,7 +250,7 @@ public class GenerateBill extends HttpServlet {
            lc.add(""+ faculty.getHomeAddress());
            
            lc.setFixedPosition(10, 680 ,300);
-           lc.addStyle(smallFont);
+           //lc.addStyle(smallFont);
            doc.add(lc);
            
            
@@ -274,7 +274,7 @@ public class GenerateBill extends HttpServlet {
            rc.add(""+ faculty.getMobile());
            
            rc.setFixedPosition(450, 690 ,300);
-           rc.addStyle(smallFont);
+           //rc.addStyle(smallFont);
            doc.add(rc);
            
            
@@ -294,6 +294,8 @@ public class GenerateBill extends HttpServlet {
            
            mc1.add("      ");
            
+           mc1.add("\n");
+           
            mc1.add(new Text("Ifsc: ").setFontSize(10).setBold());
            mc1.add(""+ faculty.getIfsc());
            
@@ -304,8 +306,8 @@ public class GenerateBill extends HttpServlet {
            
            
            
-           mc1.setFixedPosition(10, 650 ,700);
-           mc1.addStyle(smallFont);
+           mc1.setFixedPosition(10, 645 ,700);
+           //mc1.addStyle(smallFont);
            doc.add(mc1);
            
            
@@ -319,8 +321,8 @@ public class GenerateBill extends HttpServlet {
            mc2.add(new Text("Renumeration Bill For Teaching at CCT Under(SFS) int the Month of "+monthName+","+ year).setFontSize(10).setBold());
            
            
-           mc2.setFixedPosition(85, 620,600);
-           mc2.addStyle(smallFont);
+           mc2.setFixedPosition(95, 620,600);
+           //mc2.addStyle(smallFont);
            doc.add(mc2);
            
            
@@ -366,8 +368,19 @@ public class GenerateBill extends HttpServlet {
            		
            totalClass= billRecords.size();
               
-           table1.addStyle(smallFont);
+           //table1.addStyle(smallFont);
            //paragraphTable1.setFixedPosition(8, 565, 580);
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
+           paragraphTable1.add("\n");
            paragraphTable1.add(table1);
            paragraphTable1.add("\n");
               //doc.add(paragraphTable1);    
@@ -376,7 +389,6 @@ public class GenerateBill extends HttpServlet {
            
                  
            // middle table 2 
-              Paragraph paragraphTable2 = new Paragraph();
               
               Table table2 = new Table(UnitValue.createPercentArray(new float[]{5,5,3}));
               table2.setWidth(UnitValue.createPercentValue(100));   
@@ -397,14 +409,74 @@ public class GenerateBill extends HttpServlet {
               //table2.setFixedPosition(8, 565, 580);
                  //doc.add(table2);    
               paragraphTable1.add(table2);
-              paragraphTable1.setFixedPosition(8, 480, 580);
+              //paragraphTable1.setFixedPosition(8, 150, 580);
               //doc.add(paragraphTable1); // *****THIS WILL BE DOWN CZ DYNAMIC DATA IS THERE
               
               
         //certification
               paragraphTable1.add("\n");
-              paragraphTable1.add(new Text(".                                                                    Verification/Certificate                                                                      .").setFontSize(12).setBold());
+              paragraphTable1.add("\n");
+              paragraphTable1.add("\n");
+              paragraphTable1.add(new Text(".                                                          Verification/Certificate                                                                   .").setFontSize(12).setBold());
               
+        paragraphTable1.add("\n");      
+        
+        paragraphTable1.add("I ");
+        paragraphTable1.add(new Text(faculty.getFacultyName()).setBold());
+        paragraphTable1.add(" ,Solomnly declare that the best of my knowlegde and and beleif the above supplied information is correct and complete and that the classes and the other particulars shown therein (No objection of Head of Institution) are truly stated and are in accordance with the provisions of CCT stearring committee.");
+       
+        paragraphTable1.add("\n");
+        paragraphTable1.add("\n");
+        
+        paragraphTable1.add(new Text(".                                                                                                             Signature of Faculty                                 ."));
+        
+        
+        //For office use only
+        
+        paragraphTable1.add("\n");
+        paragraphTable1.add(new Text(".                                                (For Office use only)").setBold().setFontSize(12));
+        paragraphTable1.add(new Text("Attendance verified by:")); 
+        
+        
+        //Middle table 3
+        
+        paragraphTable1.add("\n");
+        paragraphTable1.add(new Text(".                    .")); 
+        
+        Table table3 = new Table(UnitValue.createPercentArray(new float[]{5,5}));
+        table3.setWidth(UnitValue.createPercentValue(70));
+        table3.setHorizontalAlignment(HorizontalAlignment.CENTER);
+        
+        table3.addCell("Name of Sub. Coordinator");
+        table3.addCell("");
+        table3.addCell("Name of Academic Coordinator:  ");
+        table3.addCell("");
+        
+        
+        
+        paragraphTable1.add(table3);
+        // This table should be added to the paragraphTable
+        
+        //
+        // Budget head sign 
+        paragraphTable1.add("\n");
+        paragraphTable1.add("\n");
+
+        
+        paragraphTable1.add(new Text(".                                       ."));
+        paragraphTable1.add(new Text("Budget Head of CCT : REM To Guest Faculty").setBold().setFontSize(12).setUnderline());
+        paragraphTable1.add("\n");
+        paragraphTable1.add(".                                                 Passed for Payment of  RS "+sum );
+        
+        paragraphTable1.add("\n");
+        paragraphTable1.add("\n");
+        
+        paragraphTable1.add(new Text(".                                                                                                 Additinal Director/ Joint Director                                 ."));
+        
+        
+        
+        
+        
         // must be in last dynamic data
               doc.add(paragraphTable1); 
         
