@@ -81,7 +81,81 @@
 				</script>
 			</c:if>
 			
+			<!-- In the case of the Year is empty-->
+			<c:if test="${yearEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please input the Year in Standard form.");
+				</script>
+			</c:if>
 			
+			<!-- In the case of the date is empty-->
+			<c:if test="${dateEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please select the date.");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the faculty is empty-->
+			<c:if test="${facultyCodeEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please select the faculty.");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${sheetNumberEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${semesterEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Select the Semester");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${paperNumberEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${typeEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${batchEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${timeEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${hoursEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
+			<!-- In the case of the Sheet is empty-->
+			<c:if test="${rateEmpty.equals('true')}">
+				<script type="text/javascript">
+					alert("Please Input the SheetNumber");
+				</script>
+			</c:if>
 		<div class="row" id="row2">
 			<div class="col-lg-6">
 			<form action="./savebill" method="post"> 
@@ -296,7 +370,7 @@
 					  
 			</div>
 				
-			<button type="submit" target="_blank" class="btn btn-primary btn-block mt-2" style="background-color:#1d1d1d;"
+			<button type="submit" class="btn btn-primary btn-block mt-2" style="background-color:#1d1d1d;"
 						id="submitbutton">Generate
 			</button>	
 				

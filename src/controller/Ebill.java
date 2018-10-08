@@ -49,6 +49,19 @@ public class Ebill extends HttpServlet {
 		}
 		
 		
+        boolean yearEmpty=false;
+		
+		if(null!=request.getAttribute("yearEmpty")) {
+			System.out.println(request.getAttribute("yearEmpty"));
+			yearEmpty= (boolean)request.getAttribute("yearEmpty");
+			if(yearEmpty) {
+				request.setAttribute("yearEmpty","true");
+			}else {
+				request.setAttribute("yearEmpty","false");
+			}
+		}
+		
+		
 		
 		// To fetch the faculty name records
 				List<FacultyBean> facultyRecords = GetFacultyDao.getName();

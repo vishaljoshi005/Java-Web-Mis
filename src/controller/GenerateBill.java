@@ -344,6 +344,7 @@ public class GenerateBill extends HttpServlet {
            		table1.addHeaderCell("Rate");
            		
            		for (BillBean b: billRecords) {
+           			
            			table1.addCell(b.getSheetNumber());
            			table1.addCell(b.getPaperNumber());
            			table1.addCell(b.getType());
