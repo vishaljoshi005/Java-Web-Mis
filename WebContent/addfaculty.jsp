@@ -156,8 +156,8 @@
 							class=" form-control border border-primary p-2 mb-3 mt-0 bg-white rounded"
 							name="facultyType">
 							<option selected>Choose</option>
-							<option value="cctFaculty">CCT Faculty</option>
-							<option value="guestFaculty">Guest Faculty</option>
+							<option value="CCT Faculty">CCT Faculty</option>
+							<option value="Guest Faculty">Guest Faculty</option>
 						</select>
 					</div>
 					

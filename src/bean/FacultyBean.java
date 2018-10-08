@@ -11,20 +11,24 @@ public class FacultyBean implements java.io.Serializable{
 	
 	private int id;
 	private String title;
-
 	private String facultyName;
+	
 	private String employeeCode;
 	private String subject;
 	private String officialAddress;
+	
 	private String homeAddress;
 	private String phone;
 	private String pancard;
+	
 	private String mobile;
 	private String bankName;
 	private String branchName;
+	
 	private String ifsc;
 	private Long account;
 	private String designation;
+	
 	private String facultyType;
 	
 	public int getId() {

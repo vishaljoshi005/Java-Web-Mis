@@ -13,15 +13,19 @@ private static final long serialVersionUID = 1L;
 	private int id;
 	private int facultyCode;
 	private String name;	
+	
 	private Date date;
 	private String day;
 	private String sheetNumber;
+	
 	private String semester;
 	private String paperNumber;
 	private String type;
+	
 	private String batch;
 	private String time;
 	private String hours;
+	
 	private int rate;
 
 	public int getId() {
