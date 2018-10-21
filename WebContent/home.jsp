@@ -44,7 +44,9 @@
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="addfaculty.jsp">Faculty</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="fee.jsp">Fee</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="./ebill">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="index.jsp">Logout</a>
 			</nav>
 			</div>
       
@@ -58,7 +60,8 @@
       		</div>
       		
       <!-- Right side of the page -->	
-      		<div class = "col-lg-6"> 
+      		<div class = "col-lg-6 "> 
+      			<div class = "border mt-1 p-1">
 	      			 <form action="./newuser" method="post">
 	      			 
 	      			 <div class="form-group">
@@ -127,7 +130,7 @@
 		</script>
 		</c:if> 
 		
-		
+			</div>
       	</div>
       </div>
       
@@ -137,7 +140,7 @@
 			  <div class ="col-lg-12" >
 			  		<div class="card text-center" id="wholefooter"  >
 						  <div class="card-header" id="footerhead" >
-						    Developed by "Vishal Joshi" and maintained by "Infonet Center"
+Developed by Vishal Joshi, CCT, University Of Rajasthan
 						  </div>
 						  
 						    <div class="footer-copyright text-center py-3" id="totalfooter" >© 2018 Copyright:

@@ -117,7 +117,7 @@
 			  <div class ="col-lg-12" id="footerindex">
 			  		<div class="card text-center" >
 						  <div class="card-header" >
-						    Developed by "Vishal Joshi" and maintained by "Infonet Center"
+Developed by Vishal Joshi, CCT, University Of Rajasthan
 						  </div>
 						  
 						    <div class="footer-copyright text-center py-3" id= "cfooter">© 2018 Copyright:

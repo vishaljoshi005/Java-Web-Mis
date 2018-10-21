@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alumni Records</title>
-    <link rel="stylesheet" href="./style/viewsalumni.css"> 
+    <title>Fee Records</title>
+    <link rel="stylesheet" href="./style/showfee.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -62,46 +62,39 @@
         <!-- Middle side of the page -->
       	
       		<div class = "col-lg-10">
-      				
-      				<div class="border pl-2 pr-5 pt-0 pb-2">
       			<table class= "table table-striped table-bordered mt-1">
       				<thead>
-      				<tr style="background-color: #F4A460;">
+      				<tr style="background-color: #FFF8DC;">
       					<th>Id</th>
       					<th>Name</th>
-      					<th>Gender</th>
-      					<th class="text-center">Birth Date</th>
-      					<th>Batch</th>
-      					<th class="text-center">Email</th>
-      					<th class="text-center">Contact</th>
-      					<th class="text-center">Branch</th>
-      					<th>Occupation</th>
-      					<th>Location</th>
-      					<th>Delete</th>
+      					<th>Father's Name</th>
+      					<th class="text-center">Enrollment Number</th>
+      					<th>Semester</th>
+      					<th class="text-center">Date</th>
+      					<th>Total Amount</th>
+      					<th>DD/Check Number</th>
       				</tr>
       				</thead>
       				<!-- If there is any records in the database -->
-      				 <c:if test="${alumniRecordsFound.equals('true')}">
-      				 	<c:forEach items="${alumniRecords}" var="alumni">
+      				 <c:if test="${feeRecordsFound.equals('true')}">
+      				 	<c:forEach items="${feeRecords}" var="fee">
 				            <tr>
-				                <td>${alumni.getId()}</td>
-				                <td>${alumni.getName()}</td>
-				                <td>${alumni.getGender()}</td>
-				                <td>${alumni.getDob()}</td>
-				                <td>${alumni.getBatch()}</td>
-				                <td>${alumni.getEmail()}</td>
-				                <td>${alumni.getContact()}</td>
-				                <td>${alumni.getBranch()}</td>
-				                <td>${alumni.getOccupation()}</td>
-				                <td>${alumni.getLocation()}</td>
-				                <td><a href="./deletealumni?id=${alumni.getId()}">Delete</a></td>    
+				                <td>${fee.getId()}</td>
+				                <td>${fee.getName()}</td>
+				                <td>${fee.getFatherName()}</td>
+				                <td>${fee.getEnrollNumber()}</td>
+				                <td>${fee.getSemester()}</td>
+				                <td>${fee.getDate()}</td>
+				                <td>${fee.getAmount()}</td>
+				                <td>${fee.getDdNumber()}</td>
+				                
 				            </tr>
 				        </c:forEach>            			
         			</c:if>
         			
         			
         			<!-- If there is NO records in the database -->
-      				 <c:if test="${alumniRecordsFound.equals('false')}">
+      				 <c:if test="${feeRecordsFound.equals('false')}">
       				 	
 				            <tr>
 				                <td>No Records Found</td>
@@ -114,40 +107,7 @@
       			</table>
       			
       	<div >
-      	<c:if test="${alumniRecordsFound.equals('true')}">
-        			
-        			<nav aria-label="Navigation for Alumni" >
-			    <ul class="pagination justify-content-center" style="background-color: #EEE;">
-			        <c:if test="${currentPage != 1}">
-			            <li class="page-item"><a class="page-link" 
-			                href="viewalumni?page=${currentPage-1}">Previous</a>
-			            </li>
-			        </c:if>
-			
-			        <c:forEach begin="1" end="${numOfPages}" var="i">
-			            <c:choose>
-			                <c:when test="${currentPage eq i}">
-			                    <li class="page-item active"><a class="page-link">
-			                            ${i} <span class="sr-only">(current)</span></a>
-			                    </li>
-			                </c:when>
-			                <c:otherwise>
-			                    <li class="page-item"><a class="page-link" 
-			                        href="viewalumni?page=${i}">${i}</a>
-			                    </li>
-			                </c:otherwise>
-			            </c:choose>
-			        </c:forEach>
-			
-			        <c:if test="${currentPage lt numOfPages}">
-			            <li class="page-item"><a class="page-link" 
-			                href="viewalumni?page=${currentPage+1}">Next</a>
-			            </li>
-			        </c:if>              
-			    </ul>
-			</nav>
-        			
-        			</c:if>
+      	
         	
         	</div>   
         					
@@ -161,28 +121,10 @@
 	      						
       		</div>		
 		
-		
-		</div>
-		
-		
       	</div>
       </div>
       
-      <!-- In the case of Alumni cannot be deleted  -->
-			<c:if test="${deleteStatus.equals('true')}">
-				<script type="text/javascript">
-					alert("Alumni Record Cannot be Deleted");
-				</script>
-			</c:if>
-			<% session.setAttribute("deleteAlumniStatus", null); %>
-			
-		<!-- In the case of Alumni record deleted  -->
-			<c:if test="${deleteStatus.equals('false')}">
-				<script type="text/javascript">
-					alert("Alumni Record Deleted");
-				</script>
-			</c:if>
-			<% session.setAttribute("deleteAlumniStatus", null); %>
+     
       
       <!-- Footer -->     
       <div class = "container-fluid">
@@ -190,7 +132,7 @@
 			  <div class ="col-lg-12" >
 			  		<div class="card text-center" id="wholefooter"  >
 						  <div class="card-header" id="footerhead" >
-						    Developed by Vishal Joshi, CCT, University Of Rajasthan
+Developed by Vishal Joshi, CCT, University Of Rajasthan
 						  </div>
 						  
 						    <div class="footer-copyright text-center py-3" id="totalfooter" >© 2018 Copyright:

@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alumni Records</title>
+    <title>Generate Bill</title>
     <link rel="stylesheet" href="./style/facultybill.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -44,11 +44,135 @@
 			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="addfaculty.jsp">Faculty</a>
-			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="ebill.jsp">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="fee.jsp">Fee</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="./ebill">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="index.jsp">Logout</a>
 			</nav>
 			</div>
       
       </div>
+      
+      
+      <div class="container-fluid">
+      <br>
+      				<div class="border-3">
+      				
+      				
+      		<div class="row">
+      				<div class= "col-lg-3"></div>
+      				<div class= "col-lg-6">
+      						<div
+							class=" alert alert-primary shadow rounded text-center mt-1 pb-0"
+							role="alert">
+							<p style="font-size:20px;">Generate Bill</p>
+						</div>
+      				
+      				</div>
+      				<div class= "col-lg-3"></div>
+      		
+      		
+      		
+      		
+      		
+      		
+      		
+      		
+      		</div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      			<div class ="row" id="row1">
+					
+				
+				<div class ="col-lg-4">
+				
+				<form action="./generatebill" method="post"> <!-- Change is needed -->
+						<div class="form-group mb-0">
+						<label class="mb-0" for="industry10">Select Faculty</label>
+						</div>
+				<div class="form-group mt-2">
+							<select
+								class=" form-control border border-primary p-2 mb-3 mt-0 mb-0 bg-white rounded"
+								name="facultyCode">
+								<option selected>Select Faculty</option>
+															
+							<!-- If there is any records in the database -->
+	      				    <c:if test="${facultyRecordsFound.equals('true')}">
+	      				 	<c:forEach items="${facultyRecords}" var="faculty">
+					        <option value= "${faculty.getId()}"> ${faculty.getFacultyName()}</option>                
+					        </c:forEach>            			
+	        			    </c:if>	
+	        			    
+	        			    </select>
+				</div>
+				
+				
+				</div>
+				
+				<div class ="col-lg-4">
+						
+						<div class="form-group mb-0 ">
+						<label for="exampleInputEmail24">Month</label> 
+						</div>			
+						<div class="form-group ">
+								<select  class=" form-control border border-primary p-2 mb-1 mt-0 pt-0 mb-0 bg-white rounded" name="month">
+								    <option selected>Select Month</option>					    
+								    <option value="01">January</option>
+								    <option value="02">February</option>
+								    <option value="03"> March</option>
+								    <option value="04"> April</option>
+								    <option value="05">May</option>
+								    <option value="06">June</option>
+								    <option value="07">July</option>
+								    <option value="08">August</option>
+								    <option value="09">September</option>
+								    <option value="10">October</option>
+								    <option value="11">November</option>
+								    <option value="12">December</option>
+								</select>
+						</div>	
+						
+			   
+				
+				
+				
+				</div>
+				
+				
+				
+				<div class ="col-lg-4">
+					<div class="form-group ">
+						
+					    <label for="exampleInputEmail61">Year</label>
+					    <input type="number" name="year" class="form-control" id="exampleInputEmail61" aria-describedby="yearHelp" placeholder="20**">
+					    <small id="yearHelp" class="form-text text-muted">Please follow the standard input like "2018" only.</small>
+					  
+					</div>
+							
+						<button type="submit" class="btn btn-primary btn-block mt-2 float-right" style="background-color:#1d1d1d;"
+									id="submitbutton">Generate
+						</button>	
+						<div class="clear-fix"></div>
+						
+				</form>
+				</div>
+			
+					
+			</div>
+			
+			</div>
+      </div>
+      
+      
+      
+      
+      
       
       
       	<div class="container-fluid">
@@ -156,13 +280,22 @@
 					alert("Please Input the SheetNumber");
 				</script>
 			</c:if>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		<div class="row" id="row2">
 			<div class="col-lg-6">
 			<form action="./savebill" method="post"> 
 			
 			<div class="form-group">
 						<div
-							class=" alert alert-primary text-center mt-1 pt-0 pb-0"
+							class=" alert shadow rounded text-center text-white mt-1 pb-0" style="background-color: #CD853F "
 							role="alert">
 							<p style="font-size:20px;">Add New Bill</p>
 						</div>
@@ -242,7 +375,14 @@
 			</div>
 			
 			
-			<div class="form-group  mb-0 ">
+			</div>
+			
+			<div class="col-lg-6">
+			
+			<br><br>
+			
+			
+			<div class="form-group mt-3 mb-0 ">
 						<label for="exampleInputEmail24">Batch</label> 
 			</div>			
 			<div class="form-group ">
@@ -260,6 +400,11 @@
 					    <option value="OTHERS">OTHERS</option>
 					</select>
 			</div>
+			
+			
+			
+			
+			
 			
 			
 			<div class="form-group  mb-0 ">
@@ -301,98 +446,15 @@
 			</div>
 			
 			
-			<button type="submit" class="btn btn-primary btn-block" style="background-color:#1d1d1d;"
+			<button type="submit" class="btn btn-primary btn-block float-right" style="background-color:#1d1d1d;"
 						id="submitbutton">Save
 			</button>
-					
+					<div class="clear-fix"></div>
 			</form>
 			</div>
 			
 			
-			<div class="col-lg-6">
-				<form action="./generatebill" method="post"> <!-- Change is needed -->
-				
-				<div class="form-group">
-						<div
-							class=" alert alert-primary text-center mt-1 pt-0 pb-0"
-							role="alert">
-							<p style="font-size:20px;">Generate Bill</p>
-						</div>
-			   </div>
 			
-			
-				<div class="form-group mb-0 ">
-						<label class="mb-0" for="industry10">Select Faculty</label>
-				</div>
-			<div class="form-group">
-						<select
-							class=" form-control border border-primary p-2 mb-3 mt-0 mb-0 bg-white rounded"
-							name="facultyCode">
-							<option selected>Select Faculty</option>
-														
-						<!-- If there is any records in the database -->
-      				    <c:if test="${facultyRecordsFound.equals('true')}">
-      				 	<c:forEach items="${facultyRecords}" var="faculty">
-				        <option value= "${faculty.getId()}"> ${faculty.getFacultyName()}</option>                
-				        </c:forEach>            			
-        			    </c:if>	
-        			    
-        			    </select>
-			</div>
-				
-				
-			<div class="form-group  mb-0 ">
-						<label for="exampleInputEmail24">Month</label> 
-			</div>			
-			<div class="form-group ">
-					<select  class=" form-control border border-primary p-2 mb-1 mt-0 pt-0 mb-0 bg-white rounded" name="month">
-					    <option selected>Select Month</option>					    
-					    <option value="01">January</option>
-					    <option value="02">February</option>
-					    <option value="03"> March</option>
-					    <option value="04"> April</option>
-					    <option value="05">May</option>
-					    <option value="06">June</option>
-					    <option value="07">July</option>
-					    <option value="08">August</option>
-					    <option value="09">September</option>
-					    <option value="10">October</option>
-					    <option value="11">November</option>
-					    <option value="12">December</option>
-					</select>
-			</div>	
-			
-			<div class="form-group mb-0">
-						
-					    <label for="exampleInputEmail61">Year</label>
-					    <input type="number" name="year" class="form-control" id="exampleInputEmail61" aria-describedby="yearHelp" placeholder="20**">
-					    <small id="yearHelp" class="form-text text-muted">Please follow the standard input like "2018" only.</small>
-					  
-			</div>
-				
-			<button type="submit" class="btn btn-primary btn-block mt-2" style="background-color:#1d1d1d;"
-						id="submitbutton">Generate
-			</button>	
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				</form>
-			</div>
 
 			
 
@@ -406,7 +468,7 @@
 			  <div class ="col-lg-12" >
 			  		<div class="card text-center" id="wholefooter"  >
 						  <div class="card-header" id="footerhead" >
-						    Developed by "Vishal Joshi" and maintained by "Infonet Center"
+						    Developed by Vishal Joshi, CCT, University Of Rajasthan
 						  </div>
 						  
 						    <div class="footer-copyright text-center py-3" id="totalfooter" >© 2018 Copyright:

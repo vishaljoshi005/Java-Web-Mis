@@ -58,8 +58,10 @@
 					class="flex-sm-fill text-sm-center nav-link text-white"
 					href="student.jsp">Students</a> <a
 					class="flex-sm-fill text-sm-center nav-link text-white" href="addfaculty.jsp">Faculty</a>
+					<a class="flex-sm-fill text-sm-center nav-link text-white " href="fee.jsp">Fee</a>
 				<a class="flex-sm-fill text-sm-center nav-link text-white"
-					href="ebill.jsp">Guest Faculty E-Bill</a>
+					href="./ebill">Guest Faculty E-Bill</a>
+					<a class="flex-sm-fill text-sm-center nav-link text-white" href="index.jsp">Logout</a>
 			</nav>
 		</div>
 
@@ -67,14 +69,15 @@
 
 	<div class="container-fluid">
 		<div class="row" id="row2">
-			<div class="col-lg-6">
+			<div class=col-lg-1></div>
+			<div class="col-lg-5">
 				<form action="./alumniregister" method="post">
 
-					<div class="form-group">
+					<div id= "addalumni"class="form-group">
 						<div
-							class=" alert alert-primary text-center mt-1 pb-0"
+							class=" alert alert-primary shadow rounded text-center mt-1 pb-0"
 							role="alert">
-							<p style="font-size:25px;">Add New Alumni</p>
+							<p style="font-size:20px;">Add New Alumni</p>
 						</div>
 					</div>
 
@@ -120,7 +123,16 @@
 							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
 
-					<div class="form-group">
+					</div>
+					
+					
+					
+					
+					<div class="col-lg-5">
+					<br><br><br>
+					
+					
+					<div class="form-group mt-2">
 						<label for="contact1">Contact</label> <input type="number"
 							class="form-control" id="contact1" name="contact"
 							placeholder="Mobile">
@@ -161,11 +173,18 @@
 
 
 
-					<button type="submit" class="btn btn-primary btn-block"
+					<button type="submit" class="btn btn-primary "
 						id="submitbutton">Save</button>
+						
+					<button type="reset" id="submitbutton" class="btn btn-secondary ml-4">Cancel</button>	
 
 				</form>
+				
+					<a href="./viewalumni?page=1" target="_blank" class="btn btn-dark text-white mt-3 " style="width:550px;"
+					id="viewalumnibutton" role="button" aria-pressed="true">View All Alumni Records </a>
 			</div>
+			
+			<div class=col-lg-1></div>
 
 			<!-- In the case of the Adding alumni successful -->
 			<c:if test="${alumniStatus.equals('true')}">
@@ -234,14 +253,10 @@
 					alert("Alumni record cannot be added");
 				</script>
 			</c:if>
-
-			<div class="col-lg-6">
-				<div class="alert alert-danger text-center pb-0" id=findalumnialert role="alert">
-					  <p style="font-size:25px;">Find Alumni</p>
-				</div>
-				<!-- This br is temporary --> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				<a href="./viewalumni?page=1" target="_blank" class="btn btn-secondary btn-lg " id="viewalumnibutton" style="font-size:18px;" role="button" aria-pressed="true">View All Alumni</a>
-			</div>
+			
+			<!-- <div class="col-lg-2"></div>  -->
+			
+			
 
 		</div>
 

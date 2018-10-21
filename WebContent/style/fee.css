@@ -7,21 +7,25 @@
     padding-bottom:0.6em;
 
 }
-#newuser{
-	margin-top:0.4em;
-	width:550px;
-	max-width:100%;
-}
-#submitbutton{ 
-	
-	width:250px;
-	max-width:100%;
-	}
 
-#addfaculty{
-	width:800px;
+#addstudentfee{
+	width:600px;
 	max-width:100%;
-}	
+	height:45px;
+	max-height:100%;
+}
+
+#submitbutton{
+	width:300px;
+	max-width:100%;
+	margin-left:8em;
+}
+
+#submitbutton1{
+	width:300px;
+	max-width:100%;
+	margin-left:7em;
+}
 
 #wholefooter{
 	margin-top:1em;

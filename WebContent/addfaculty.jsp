@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Alumni Records</title>
+    <title>Add Faculty</title>
     <link rel="stylesheet" href="./style/addfaculty.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -44,7 +44,9 @@
 			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="alumni.jsp">Alumni</a> 
 			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="student.jsp">Students</a>
 			  <a class="flex-sm-fill text-sm-center nav-link text-white active" href="addfaculty.jsp">Faculty</a>
-			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="ebill.jsp">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white " href="fee.jsp">Fee</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="./ebill">Guest Faculty E-Bill</a>
+			  <a class="flex-sm-fill text-sm-center nav-link text-white" href="index.jsp">Logout</a>
 			</nav>
 			</div>
       
@@ -52,19 +54,28 @@
       
       
       	<div class="container-fluid">
+      	
+      	<div class ="row" id="row1">
+      		<div class="col-lg-2"></div>
+      		<div class="col-lg-8">
+      			<div class="form-group">
+						<div
+							class="alert alert-primary rounded shadow rounded text-center text-dark mt-1 pb-0" id="addfaculty1" style="background-color:#FFA07A;" role="alert">
+							<p style="font-size:18px;">Add New Faculty</p>
+						</div>
+					</div>
+      		</div>
+      		<div class= "col-lg-2"></div>
+      	</div>
+      	
 		<div class="row" id="row2">
-			<div class="col-lg-3">
-			</div>
-			<div class="col-lg-6">
+			
+			<div class="col-lg-4">
+			
 			<!-- change the methods here -->
 				<form action="./facultyregister" method="post">
 
-					<div class="form-group">
-						<div
-							class="border border-info alert  text-center text-white mt-2 pb-0 pt-0" style="background-color:MediumSeaGreen;" role="alert">
-							<p style="font-size:20px;">Add New Faculty</p>
-						</div>
-					</div>
+					
 					
 					<div class="form-group ">
 						<label for="exampleInputEmail11">Title </label> <input type="text"
@@ -88,14 +99,20 @@
 							name="subject" class="form-control" id="exampleInputEmail13"
 							aria-describedby="emailHelp" placeholder="Subject" />
 						</div>
-
-					
-					
-					<div class="form-group ">
+						
+						<div class="form-group  ">
 						<label for="exampleInputEmail14">Official Address</label> <input type="text"
 							name="officialAddress" class="form-control" id="exampleInputEmail14"
 							aria-describedby="emailHelp" placeholder="Official Address" />
 					</div>
+
+					</div>
+					
+					
+					
+					<div class="col-lg-4">
+					
+					
 					<div class="form-group ">
 						<label for="exampleInputEmail15">Home Address</label> <input type="text"
 							name="homeAddress" class="form-control" id="exampleInputEmail15"
@@ -124,6 +141,10 @@
 							name="bankName" class="form-control" id="exampleInputEmail18"
 							aria-describedby="emailHelp" placeholder="Bank" />
 					</div>
+					
+				</div>
+				
+				<div class="col-lg-4">
 					
 					<div class="form-group ">
 						<label for="exampleInputEmail19">Branch Name </label> <input type="text"
@@ -162,9 +183,9 @@
 					</div>
 					
 					
-					<button type="submit" class="btn btn-primary btn-block" style="background-color:#1d1d1d;"
+					<button type="submit" class="btn btn-primary float-right" style="background-color:#1d1d1d;"
 						id="submitbutton">Save</button>
-
+					<div class="clear-fix"></div>
 				</form>
 			</div>
 
@@ -182,9 +203,6 @@
 				</script>
 			</c:if>
 
-			<div class="col-lg-3">
-				
-			</div>
 
 		</div>
 

@@ -13,16 +13,12 @@
 	max-width:100%;
 }
 #submitbutton{ 
-	
-	width:250px;
-	max-width:100%;
+	margin-left:8em;
+	margin-bottom:0.5em;
+	padding: 0.5em 1em;
+	width:550px;
+	max-width:100%; 
 	}
-
-#addfaculty{
-	width:800px;
-	max-width:100%;
-}	
-
 #wholefooter{
 	margin-top:1em;
 }

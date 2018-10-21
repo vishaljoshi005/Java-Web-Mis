@@ -1,3 +1,4 @@
+@charset "ISO-8859-1";
 #jumbo{
 	height:100%;
     max-height:auto;
@@ -6,24 +7,27 @@
     padding-bottom:0.6em;
 
 }
+
 #newuser{
 	margin-top:0.4em;
 	width:550px;
 	max-width:100%;
 }
+
 #submitbutton{ 
-	margin-left:8em;
-	margin-bottom:0.5em;
-	padding: 0.5em 1em;
-	width:550px;
+	margin-left:15em;
+	width:400px;
 	max-width:100%; 
 	}
+	
 #wholefooter{
 	margin-top:1em;
 }
+
 #footerhead{
 	padding:0.5em;
 }
+
 #totalfooter{
 	height:40px;
 	max-height:auto;

@@ -58,8 +58,10 @@
 					class="flex-sm-fill text-sm-center nav-link text-white active"
 					href="student.jsp">Students</a> <a
 					class="flex-sm-fill text-sm-center nav-link text-white" href="addfaculty.jsp">Faculty</a>
+					<a class="flex-sm-fill text-sm-center nav-link text-white " href="fee.jsp">Fee</a>
 				<a class="flex-sm-fill text-sm-center nav-link text-white"
-					href="ebill.jsp">Guest Faculty E-Bill</a>
+					href="./ebill">Guest Faculty E-Bill</a>
+					<a class="flex-sm-fill text-sm-center nav-link text-white" href="index.jsp">Logout</a>
 			</nav>
 		</div>
 
@@ -72,8 +74,8 @@
 
 					<div class="form-group">
 						<div
-							class="border border-info alert  text-center text-white mt-2 pb-0" style="background-color:MediumSeaGreen;" role="alert">
-							<p style="font-size:25px;">Add New Student</p>
+							class="alert shadow rounded text-dark text-center mt-1 pb-0" style="background-color:#F0E68C;" role="alert">
+							<p style="font-size:20px;">Add New Student</p>
 						</div>
 					</div>
 
@@ -116,8 +118,15 @@
 							aria-describedby="emailHelp" placeholder="Name" />
 					</div>
 
+
+					</div>
 					
-					<div class="form-group">
+					<div class="col-lg-6">
+
+
+
+					<br><br><br>
+					<div class="form-group mt-2 ">
 						<label for="datepicker1">Date Of Birth</label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
 							class=" form-control border border-primary bg-white rounded"
@@ -149,10 +158,15 @@
 							placeholder="Address with Pincode">
 					</div>
 					
-					<button type="submit" class="btn btn-primary btn-block" style="background-color:#1d1d1d;"
+					<button type="submit" class="btn btn-primary mr-5"
 						id="submitbutton">Save</button>
+						
+					<button type="reset" id="submitbutton" class="btn btn-secondary ml-5 ">Cancel</button>
 
 				</form>
+				
+				<a href="./viewstudent?page=1" target="_blank" class="btn btn-dark text-white mt-3 " style="width:650px;" id="viewalumnibutton" style="background-color:#FF7F50; font-size:18px;"  role="button" aria-pressed="true">
+				View All Students Records</a>
 			</div>
 
 			<!-- In the case of the Adding alumni successful -->
@@ -232,14 +246,6 @@
 				</script>
 			</c:if>
 
-			<div class="col-lg-6">
-				<div class="alert alert-danger text-dark text-center mt-2 pb-0" style="background-color:#EAE6DA;" id=findalumnialert role="alert">
-					  <p style="font-size:25px;">Find Student</p>
-				</div>
-				<!-- This br is temporary --> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				<a href="./viewstudent?page=1" target="_blank" class="btn btn-lg text-white" id="viewalumnibutton" style="background-color:#FF7F50; font-size:18px;"  role="button" aria-pressed="true">View All Students</a>
-			</div>
-
 		</div>
 
 	</div>
@@ -247,8 +253,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="card text-center" id="wholefooter">
-					<div class="card-header" id="footerhead">Developed by "Vishal
-						Joshi" and maintained by "Infonet Center"</div>
+					<div class="card-header" id="footerhead">Developed by Vishal Joshi, CCT, University Of Rajasthan
+					</div>
 
 					<div class="footer-copyright text-center py-3" id="totalfooter">
 						© 2018 Copyright: <a target="_blank" href="http://www.uniraj.ac.in/cct/">
