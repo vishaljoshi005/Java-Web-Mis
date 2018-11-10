@@ -472,7 +472,7 @@ public class GenerateBill extends HttpServlet {
         paragraphTable1.add("\n");
         paragraphTable1.add("\n");
         
-        paragraphTable1.add(new Text(".                                                                                                 Additinal Director/ Joint Director                                 ."));
+        paragraphTable1.add(new Text(".                                                                                                 Additional Director/ Joint Director                                 ."));
         
         
         
