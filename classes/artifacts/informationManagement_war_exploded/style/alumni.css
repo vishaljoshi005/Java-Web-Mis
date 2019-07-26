@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+#jumbo{
+	height:100%;
+    max-height:auto;
+    margin-bottom:0.3em;
+    padding-top:0.5em;
+    padding-bottom:0.6em;
+
+}
+#newuser{
+	margin-top:0.4em;
+	width:950px;
+	max-width:100%;
+}
+
+#addalumni1{
+	height:60px;
+	max-height:100%;
+}
+#submitbutton{
+	width:250px;
+	max-width:100%;
+}
+
+#viewalumnibutton{
+	widht:500px;
+	max-width:100%;
+}
+
+#wholefooter{
+	margin-top:1em;
+}
+#footerhead{
+	padding:0.5em;
+}
+#totalfooter{
+	height:40px;
+	max-height:auto;
+}

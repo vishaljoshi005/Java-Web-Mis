@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+#jumbo{
+	height:100%;
+    max-height:auto;
+    margin-bottom:0.3em;
+    padding-top:0.5em;
+    padding-bottom:0.6em;
+
+}
+#newuser{
+	margin-top:0.4em;
+	width:950px;
+	max-width:100%;
+}
+#submitbutton{ 
+	width:250px;
+	max-width:100%;
+	}
+	
+	
+#findalumnialert{
+	margin-top:0.3em;
+	margin-left:4em;
+	width:600px;
+	max-width:100%
+}
+
+
+#wholefooter{
+	margin-top:1em;
+}
+#footerhead{
+	padding:0.5em;
+}
+#totalfooter{
+	height:40px;
+	max-height:auto;
+}

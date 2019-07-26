@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="informationManagement:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/informationManagement_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="informationManagement" />
+          <element id="dir-copy" path="$PROJECT_DIR$/../../TomcatV9" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/barcodes-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/forms-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/io-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/kernel-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/layout-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/pdfa-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/pdftest-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/sign-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/styled-xml-parser-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../iText7-Core-7.1.3_2/svg-7.1.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../JSTL/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.11/mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../slf4j-1.7.25/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../slf4j-1.7.25/slf4j-jdk14-1.7.25.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="informationManagement/web/Web" />
+    </root>
+  </artifact>
+</component>
